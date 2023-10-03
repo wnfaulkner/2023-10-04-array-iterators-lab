@@ -55,7 +55,6 @@
     )
     // console.log(totalYearsLived)
     
-    
     const people = [
         'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
         'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul',
@@ -74,7 +73,10 @@
     // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
     // Hint: As a start, consider using the String.prototype.split method to "split" the string using ', ' as the separator
     
-    
+    const firstThenLastNames = people.map(
+        (person) => person.split(',')[1]+' '+person.split(',')[0]
+    )
+    // console.log(firstThenLastNames)
     
     
     const data = [
@@ -86,7 +88,17 @@
     // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
     // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
     
-    
+    const vehicleTally = data.reduce(
+        (accumulator, datum) => {
+            accumulator[datum] = accumulator[datum] ? accumulator[datum] + 1 : 1
+            return(accumulator)
+        },
+        {}
+    )
+    // console.log(vehicleTally)
+    // const x = {yes: 1, no: 0}
+    // console.log(x)
+    // console.log(x['yes'])
     
     const devs = [
         { name: 'Wes', year: 1988 },
