@@ -49,8 +49,7 @@
 // 5. How many years did all the inventors live?
     
     const totalYearsLived = inventors.reduce(
-        (accumulator, inventor) => 
-        accumulator + inventor.passed - inventor.year, //WHY DOESN'T THIS WORK WITH CURLY BRACKETS AROUND THIS LINE?
+        (accumulator, inventor) => {return accumulator + inventor.passed - inventor.year}, //WHY DOESN'T THIS WORK WITH CURLY BRACKETS AROUND THIS LINE? IT DOES, BUT ONLY IF YOU ADD 'return' BECAUSE IT'S ACTING LIKE A NORMAL FUNCTION
         0
     )
     // console.log(totalYearsLived)
@@ -95,7 +94,7 @@
         },
         {}
     )
-    // console.log(vehicleTally)
+    console.log(vehicleTally)
     // const x = {yes: 1, no: 0}
     // console.log(x)
     // console.log(x['yes'])
@@ -147,4 +146,4 @@
     // Array.prototype.findIndex()
     // 11. Find the index of the comment with an id of 123523
     const commentId123523Index = comments.findIndex((comment) => comment.id === 123523)
-    console.log(commentId123523Index)
+    // console.log(commentId123523Index)
